@@ -3,7 +3,7 @@ Learning Golang Language :)
 
 
 1) Albums (Experimental Package)
-2) lient-Server Architecture
+2) Client-Server Architecture
 3) Modules Package 
 4) Slices
 5) Time
