@@ -15,7 +15,7 @@ type album struct {
     Price  float64 `json:"price"`
 }
 
-
+// EJ added go routine capabilities to REST API - HTTP Router(GIN)
 func main() {
 
 	router := gin.Default()
