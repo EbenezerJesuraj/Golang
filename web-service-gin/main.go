@@ -19,9 +19,10 @@ type album struct {
 func main() {
 
 	router := gin.Default()
-	router.GET("/albums", getAlbums)
-        router.GET("/albums/:id", getAlbumByID)
-	router.POST("/albums", postAlbums)
+	
+	go router.GET("/albums", getAlbums)
+        go router.GET("/albums/:id", getAlbumByID)
+	go router.POST("/albums", postAlbums)
 
 	router.Run("localhost:3000")
 }
