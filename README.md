@@ -14,4 +14,5 @@ Learning Golang Language :)
 References:
 
 [1] [Golang-Docs]: https://go.dev/doc/
-[2] [GIN-Webs-Framework]: https://github.com/gin-gonic/gin
+
+[2] [GIN-Web-Framework]: https://github.com/gin-gonic/gin
