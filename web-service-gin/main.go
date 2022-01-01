@@ -5,6 +5,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+
+	"fmt"
 )
 
 // album represents data about a record album.
@@ -15,16 +17,17 @@ type album struct {
     Price  float64 `json:"price"`
 }
 
-// EJ added go routine capabilities to REST API - HTTP Router(GIN)
+
 func main() {
 
 	router := gin.Default()
-	
-	go router.GET("/albums", getAlbums)
-        go router.GET("/albums/:id", getAlbumByID)
-	go router.POST("/albums", postAlbums)
 
-	router.Run("localhost:3000")
+	go router.GET("/albums", getAlbums)
+    go router.GET("/albums/:id", getAlbumByID)
+	go router.POST("/albums", postAlbums)
+	go router.DELETE("/albums/:id",deleteAlbumbyID)
+
+	router.Run("localhost:7000")
 }
 
 // albums slice to seed record album data.
@@ -68,3 +71,40 @@ func getAlbumByID(c *gin.Context) {
     }
     c.IndentedJSON(http.StatusNotFound, gin.H{"message": "album not found"})
 }
+
+func updateAlbumID(c *gin.Context){
+
+	id := c.Param("id")
+
+	for _,a := range albums {
+		if a.ID == id {
+			fmt.Println(a.ID)
+		}
+	}
+}
+
+func deleteAlbumbyID(c *gin.Context){
+
+	if := c.Param("id")
+	fmt.Println("Enter position to delete::")
+	fmt.Scanln(&pos)
+
+	new_arr := make([]album, (len(arr) - 1))
+	k := 0
+	for i:= 0; i< (len(arr) - 1); {
+		if i != pos {
+			new_arr[i] = album[k]
+			k++
+			i++
+		} else {
+			k++
+		}
+	}
+	album[] = new_arr[]
+
+	for i:= 0; i < (len(album) - 1); i++ {
+
+		fmt.Println(new_Arr[i])
+	}
+}
+
