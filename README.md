@@ -10,3 +10,8 @@ Learning Golang Language :)
 6) Simple Web-Server
 7) web-service-gin (HTTP - Router (GIN - Framework) => REST API + Go Routines + Go Module(Experimental Stage)
  
+
+References:
+
+[1] [Golang-Docs]: https://go.dev/doc/
+[2] [GIN-Webs-Framework]: https://github.com/gin-gonic/gin
